@@ -3,11 +3,16 @@ from xgboost import XGBClassifier
 import pandas as pd
 import numpy as np
 import pickle
+import os
 
 # Create an instance of Flask
 app = Flask(__name__)
 
-with open(f'../best_xgb_model.pickle', "rb") as f:
+
+# filename = os.path.abspath(__file__) + os.sep + 'lgbm_model.pickle'
+
+filename = './lgbm_model.pickle'
+with open('filename', "rb") as f:
     model = pickle.load(f)
 
 feature_names = model.get_booster().feature_names
