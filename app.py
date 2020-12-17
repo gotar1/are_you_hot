@@ -23,10 +23,10 @@ app.config['DEBUG'] = True
 
 ## flask routes
 
-# @app.route("/")
-# def welcome():
-#     return render_template("chart.html") 
-
+@app.route("/")
+def welcome():
+    return render_template("dashboard.html") 
+# Project_3_Hot_Model/template/
 # def map():
 #     return render_template("index.html") 
 @app.route('/')
