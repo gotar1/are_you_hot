@@ -23,7 +23,7 @@ with open(f'./Project_3_Hot_Model/lgbm_model.pickle', "rb") as f:
 
 feature_names = model.booster_.feature_name()
 # feature_names = model.get_booster().feature_names
-print(feature_names)
+# print(feature_names)
 
 # Route to render index.html template
 @app.route("/", methods=["GET", "POST"])
@@ -34,7 +34,6 @@ def home():
         sex = str(request.form["sex"])
         eye_color = str(request.form["eye color"])
         distinctive_features = str(request.form["distinctive features"])
-        zodiac_sign = str(request.form["zodiac sign"])
         height = float(request.form["height"])
         weight = float(request.form["weight"])
         ratio = weight/height
@@ -43,20 +42,24 @@ def home():
         # , columns=['sex', 'eye_color', 'distinctive_features', 'zodiac_sign', 'ratio(wt/ht', 'age']
         # , columns=feature_names
         # data must be converted to df with matching feature names before predict
-        data_df = pd.DataFrame(np.array([[sex, eye_color, distinctive_features, zodiac_sign, ratio, age]]))
+        data_df = pd.DataFrame(np.array([[sex, eye_color, distinctive_features, ratio, age]]), columns=['sex', 'eye_color', 'distinctive_features', 'ratio(wt/ht)', 'age'])
+        data_df['age'] = pd.to_numeric(data_df['age'])
+        data_df['ratio(wt/ht)'] = pd.to_numeric(data_df['ratio(wt/ht)'])
         print(data_df)
-        data = pd.get_dummies(data_df, columns=['sex', 'eye_color', 'distinctive_features', 'zodiac_sign', 'ratio(wt/ht', 'age'])
-        # cat_col = data_df.select_dtypes(include=['object']).columns
-        # dummies = pd.get_dummies(data_df[cat_col],drop_first=True)
-        # without_dummies = data_df.drop(cat_col,axis=1)
-        # data = pd.concat([dummies,without_dummies],axis=1)
-    
-        # vect = cv.transform(data).toarray()
-        # result = model.predict(vect)
-        # for col in feature_names:
-        #   if col not in data.columns:
-        #        data[col] = False
+        print(data_df.dtypes)
+        print(sex)
+        print(eye_color)
+        print(distinctive_features)
+        print(height)
+        print(weight)
+        print(age)
+        data = pd.get_dummies(data_df)
+        print(data.columns)
 
+        for col in feature_names:
+            if col not in data.columns:
+                data[col] = 0
+            
         result = model.predict(data[feature_names])
         if result == 0:
             output_message = "Hot Hot..It's Getting Hot in Here ^_^"
