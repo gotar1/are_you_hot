@@ -1,6 +1,5 @@
+# import modules
 from flask import Flask, render_template, redirect, request
-from sklearn.feature_extraction.text import CountVectorizer
-from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
 import pandas as pd
 import numpy as np
@@ -10,26 +9,17 @@ import os
 # Create an instance of Flask
 app = Flask(__name__)
 
+# upload saved model file
 with open(f'./Project_3_Hot_Model/lgbm_model.pickle', "rb") as f:
     model = pickle.load(f)
 
-# with open(f'./Project_3_Hot_Model/xgb_model.pickle', "rb") as f:
-#     model = pickle.load(f)
-
-# model_columns = model.columns
-# filename = './Project_3/lgbm_model.pickle'
-# with open('filename', "rb") as f:
-#     model = pickle.load(f)
-
+# grap feature names from our model
 feature_names = model.booster_.feature_name()
-# feature_names = model.get_booster().feature_names
-# print(feature_names)
 
-# Route to render index.html template
+# Route to render index2.html template
 @app.route("/", methods=["GET", "POST"])
 def home():
     output_message = ""
-    # cv = CountVectorizer()
     if request.method == "POST":
         sex = str(request.form["sex"])
         eye_color = str(request.form["eye color"])
@@ -39,36 +29,39 @@ def home():
         ratio = weight/height
         age = float(request.form["age"])
 
-        # , columns=['sex', 'eye_color', 'distinctive_features', 'zodiac_sign', 'ratio(wt/ht', 'age']
-        # , columns=feature_names
-        # data must be converted to df with matching feature names before predict
+        # convert user input into a dataFrame and let columns equal to our data columns..
         data_df = pd.DataFrame(np.array([[sex, eye_color, distinctive_features, ratio, age]]), columns=['sex', 'eye_color', 'distinctive_features', 'ratio(wt/ht)', 'age'])
+        
+        # convert objects types to numerical.
         data_df['age'] = pd.to_numeric(data_df['age'])
         data_df['ratio(wt/ht)'] = pd.to_numeric(data_df['ratio(wt/ht)'])
+
+        # making user input not case sensitive. since our dataframe features start with capital letter..
+        data_df['sex'] = data_df['sex'].str.title()
+        data_df['eye_color'] = data_df['eye_color'].str.title()
+        data_df['distinctive_features'] = data_df['distinctive_features'].str.title()
+
         print(data_df)
         print(data_df.dtypes)
-        print(sex)
-        print(eye_color)
-        print(distinctive_features)
-        print(height)
-        print(weight)
-        print(age)
-        data = pd.get_dummies(data_df)
-        print(data.columns)
 
+        # We use pandas get_dummies to create OneHotEncoder variables
+        data = pd.get_dummies(data_df)
+
+        # for loop to use only features corresponding to user input.
         for col in feature_names:
             if col not in data.columns:
                 data[col] = 0
-            
+
+        # make our prediction using our model and print corresponding message. 
         result = model.predict(data[feature_names])
         if result == 0:
             output_message = "Hot Hot..It's Getting Hot in Here ^_^"
         else:
             output_message = "Looks Like You Have a Good Personality :-("
-        # print(output_message)
+
         print(data)
-        print(result)
-        print(feature_names)
+
+        # print(feature_names)
     return render_template("index2.html", message = output_message)
 
 if __name__ == "__main__":
