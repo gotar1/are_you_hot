@@ -25,11 +25,13 @@ app.config['DEBUG'] = True
 
 # @app.route("/")
 # def welcome():
-#     return render_template("chart.html") 
-
-# def map():
 #     return render_template("index.html") 
+
+@app.route("/")
+def dashboard():
+    return render_template("dashboard.html") 
 @app.route('/')
+
 def route():
     """List all available routes"""
     return (
