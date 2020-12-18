@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Donate Form</title>
+    <title>Heat Index</title>
 
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,33 +16,44 @@
     <body>
         <div class="container">
             <div class="jumbotron" style="text-align: center">
-                <h1>Predicting blood donation</h1>
+                <h1>Hot or Not</h1>
                 <p>Enter your details below!</p>
             </div>
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
-                    <form method="POST" action="/" role="form", name="donationform">
+                    <form method="POST" action="/" role="form", name="hotform">
                         <div class="form-group">
-                            <label>Recency (months)</label>
-                            <input type="text" class="form-control" name="recency" placeholder="Recency">
+                            <label>Sex</label>
+                            <input type="text" class="form-control" name="sex" placeholder="Sex">
+                        </div>
+                         <div class="form-group">
+                            <label>Eye Color</label>
+                            <input type="text" class="form-control" name="eye color" placeholder="Eye Color">
                         </div>
                         <div class="form-group">
-                            <label>Frequency (times)</label>
-                            <input type="text" class="form-control" name="frequency" placeholder="Frequency">
+                            <label>Distinctive Features(Lips/Eyes/Jawline..etc)</label>
+                            <input type="text" class="form-control" name="distinctive features" placeholder="Distinctive Features">
                         </div>
                         <div class="form-group">
-                            <label>Monetary (c.c. blood)</label>
-                            <input type="text" class="form-control" name="monetary" placeholder="Monetary">
+                            <label>Height(format is in feet)</label>
+                            <input type="text" class="form-control" name="height" placeholder="height ex 5.6">
                         </div>
                         <div class="form-group">
-                            <label>Time (months)</label>
-                            <input type="text" class="form-control" name="time" placeholder="Time">
+                            <label>Weight(lb)</label>
+                            <input type="text" class="form-control" name="weight" placeholder="weight">
+                        </div>
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input type="text" class="form-control" name="age" placeholder="Age">
                         </div>
                         <input type="submit" value="submit" class="btn btn-default">
                     </form>
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <h1>{{ Hot or Not }}</h1>
+                </div>
                 <div class="col-md-offset-2 col-md-8">
                     <h1>{{ message }}</h1>
                 </div>

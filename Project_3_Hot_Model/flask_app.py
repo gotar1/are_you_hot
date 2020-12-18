@@ -1,7 +1,5 @@
 # import modules
 from flask import Flask, render_template, redirect, request
-from sklearn.feature_extraction.text import CountVectorizer
-from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
 import pandas as pd
 import numpy as np
