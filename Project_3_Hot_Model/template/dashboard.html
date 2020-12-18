@@ -11,22 +11,15 @@
   <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    
-    <div><button type="button" class="btn btn-outline-secondary"><a href="index.html" class="card-link">Homepage</a></button></div>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Data
-          </a>         
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="barchart.html">Bar Chart</a>
-            <br>
-            <a class="dropdown-item" href="piechart.html">Pie Chart</a>
-          </div>                   
-        </li>    
-      </ul>         
-    </div>
+  <div class="dropdown">
+    <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">Results
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="barchart.html">Bar Chart</a></li>
+      <li><a href="piechart.html">Pie Chart</a></li>     
+    </ul>
+  </div>   
    
 
   <div class="container">
@@ -34,6 +27,7 @@
       <div class="col-md-12 jumbotron text-center">
   <h1>Hot or Not</h1>
   <p>Dashboard</p>
+  <!-- <img src="birds1.jpg" alt="Image"> -->
       </div>
     </div>
     <div id="plot"></div>

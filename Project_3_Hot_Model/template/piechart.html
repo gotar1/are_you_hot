@@ -11,9 +11,15 @@
   <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    
-<div><button type="button" class="btn btn-outline-secondary"><a href="index.html" class="card-link">Homepage</a></button></div>
-<div><button type="button" class="btn btn-outline-secondary"><a href="dashboard.html" class="card-link">Dashboard</a></button></div>   
+    <div class="dropdown">
+        <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">Results
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Homepage</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="barchart.html">Bar Chart</a></li>
+        </ul>
+      </div>    
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://d3js.org/d3.v6.min.js"></script>

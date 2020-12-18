@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
     <body>
+        <div class="dropdown">
+            <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">Results
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="barchart.html">Bar Chart</a></li>
+              <li><a href="piechart">Pie Chart</a></li>
+            </ul>
+          </div>    
         <div class="container">
             <div class="jumbotron" style="text-align: center">
                 <h1>Hot or Not</h1>
@@ -30,20 +39,20 @@
                             <label>Eye Color</label>
                             <input type="text" class="form-control" name="eye color" placeholder="Eye Color">
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Hair Color</label>
                             <input type="text" class="form-control" name="hair color" placeholder="Hair Color">
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label>Distinctive Features(Lips/Eyes/Jawline..etc)</label>
                             <input type="text" class="form-control" name="distinctive features" placeholder="Distinctive Features">
                         </div>
                         <div class="form-group">
-                            <label>Zodiac Sign</label>
+                            <label>Height</label>
                             <input type="text" class="form-control" name="zodiac sign" placeholder="Zodiac Sign">
                         </div>
                         <div class="form-group">
-                            <label>Tattoo Body Art(Yes/No)</label>
+                            <label>Weight</label>
                             <input type="text" class="form-control" name="tattoo body art" placeholder="Tattoo Body Art">
                         </div>
                         <div class="form-group">
@@ -59,7 +68,6 @@
                     <h1>{{ Hot or Not }}</h1>
                 </div>
             </div>
-        </div>
-        <div><button type="button" class="btn btn-outline-secondary"><a href="dashboard.html" class="card-link">Dashboard</a></button></p></div>
+        </div>        
     </body>
 </html>
