@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -16,8 +17,8 @@
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li><a href="index.html">Homepage</a></li>
-      <li><a href="barchart.html">Bar Chart</a></li>
-      <li><a href="piechart.html">Pie Chart</a></li>     
+      <!-- <li><a href="barchart.html">Bar Chart</a></li>
+      <li><a href="piechart.html">Pie Chart</a></li>      -->
     </ul>
   </div>   
    
@@ -27,26 +28,44 @@
       <div class="col-md-12 jumbotron text-center">
   <h1>Hot or Not</h1>
   <p>Dashboard</p>
-  <!-- <img src="birds1.jpg" alt="Image"> -->
       </div>
     </div>
-    <div id="plot"></div>
+    
+  </div>
     <!-- <select id="selDataset">
       <option value="EyeColor">EyeColor</option>
       <option value="HairColor">HairColor</option>
     </select> -->
     <!-- <script src="bar.js"></script> -->
-    <div class = "row">
-      <div class="col-8">
-        <div id="books-table"></div>
-        <table class="table table-hover"></table>
-      </div>
-    </div>    
-  </div>
+    <!-- <body> -->
+      <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr><th>Categories</th><th>Hot</th><th>Not Hot</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+      <!-- <h2>Distinctive Features</h2>
+      <select id="selDataset" onchange="getData(this.value)">
+          <option value="distinct">Distinctive Feature</option>
+          <option value="sex">Sex</option>       
+      </select>
+      <div id="pie"></div> -->
+      <!-- <script src="data.js"></script>
+      <script src="plots.js"></script> -->
+  <!-- </body> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script src="../static/bar.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./static/js/pie.js"></script>
+
 </body>
 </html>

@@ -1,18 +1,46 @@
 // Create an array of each country's numbers
-var distinct = Object.values(data.distinct);
-var sex = Object.values(data.sex);
+let url = 'api/v1.0/hot'
+d3.json(url).then(function(data){
+  console.log(data);
+  
+  let distinctiveFeatures = [];
+  data.forEach(item => distinctiveFeatures.push(item.distinctive_features));
+  console.log(distinctiveFeatures);
+
+  let sex = [];
+  data.forEach(item => sex.push(item.sex));
+  console.log(sex);
+
+  // let eyeColor = [];
+  // data.forEach(item => eyeColor.push(item.eye_color));
+  // console.log(eyeColor);
+  function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+  let distinctive = data.distinctive_features;
+  let disCount = distinctive.filter(onlyUnique)
+  let disLength = distinctive.length
+  // let distinctCounts = distinctive.c
+  // console.log(distinctCounts)
+  console.log(disCount)
+  console.log(disLength)
+});
+
+
+// let distinct = Object.values(data.distinct);
+// let sex = Object.values(data.sex);
 // Create an array of music provider labels
-var labels = Object.keys(data.distinct);
+// let labels = Object.keys(data.distinct);
 
 // Display the default plot
 function init() {
-  var data = [{
-    values: distinct,
-    labels: labels,
+  let data = [{
+    // values: distinct,
+    // labels: labels,
     type: "pie"
   }];
 
-  var layout = {
+  let layout = {
     height: 600,
     width: 800
   };
@@ -25,22 +53,22 @@ d3.selectAll("#selDataset").on("change", getData);
 
 // Function called by DOM changes
 function getData() {
-  var dropdownMenu = d3.select("#selDataset");
+  let dropdownMenu = d3.select("#selDataset");
   // Assign the value of the dropdown menu option to a variable
-  var dataset = dropdownMenu.property("value");
+  let dataset = dropdownMenu.property("value");
   // Initialize an empty array for the country's data
-  var data = [];
+  let data = [];
 
-  if (dataset == 'distinct') {
-      data = distinct;
-  }
-  else if (dataset == 'sex') {
-      data = sex;
+  // if (dataset == 'distinct') {
+  //     data = distinct;
+  // }
+  // else if (dataset == 'sex') {
+  //     data = sex;
 
 }
   // Call function to update the chart
-  updatePlotly(data);
-}
+//   updatePlotly(data);
+// }
 
 // Update the restyled plot's values
 function updatePlotly(newdata) {
