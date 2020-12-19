@@ -36,9 +36,9 @@ with open(f'./ML_Hot_Model/lgbm_model.pickle', "rb") as f:
 # grap feature names from our model
 feature_names = model.booster_.feature_name()
 
-@app.route("/dashboard/")
-def dashboard():
-    return render_template("dashboard.html") 
+# @app.route("/dashboard/")
+# def dashboard():
+#     return render_template("dashboard.html") 
 @app.route('/')
 
 def route():
