@@ -10,7 +10,7 @@ import os
 app = Flask(__name__)
 
 # upload saved model file
-with open(f'./Project_3_Hot_Model/lgbm_model.pickle', "rb") as f:
+with open(f'./ML_Hot_Model/lgbm_model.pickle', "rb") as f:
     model = pickle.load(f)
 
 # grap feature names from our model

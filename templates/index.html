@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
     <body>
+        <div class="dropdown">
+            <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">Results
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="barchart.html">Bar Chart</a></li>
+              <li><a href="piechart">Pie Chart</a></li>
+            </ul>
+        </div>    
         <div class="container">
             <div class="jumbotron" style="text-align: center">
                 <h1>Hot or Not</h1>

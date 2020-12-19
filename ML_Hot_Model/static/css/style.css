@@ -1,9 +1,17 @@
 html,
-/* body {
-  height: 100%;
+
+body {
   padding: 0;
   margin: 0;
-} */
+}
+
+.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: green;
+}
 
 .jumbotron {
   font-size: 20px;
@@ -19,12 +27,6 @@ html,
 .form-group {
 
   text-align: left;
-}
-
-.table-striped, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  text-align: center;
 }
 
 p {
