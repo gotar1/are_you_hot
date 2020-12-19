@@ -12,8 +12,19 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/index2_style.css') }}">
+        <a href="{{ url_for('S13') }}">S13</a>
     </head>
     <body>
+        <div><button type="button" class="btn btn-outline-secondary"><a href="dashboard.html" class="card-link">Dashboard</a></button></p></div>
+        <div class="dropdown-hover left">
+            <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">Visuals
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="barchart.html">Bar Chart</a></li>
+              <li><a href="piechart">Pie Chart</a></li>
+            </ul>       
+        </div>
         <div class="container">
             <div class="jumbotron" style="text-align: center">
                 <h1>Hot or Not</h1>
@@ -95,5 +106,6 @@
                 </div>
             </div>
         </div>
+        <!-- <div><button type="button" class="btn btn-outline-secondary"><a href="dashboard.html" class="card-link">Dashboard</a></button></p></div>    -->
     </body>
 </html>
