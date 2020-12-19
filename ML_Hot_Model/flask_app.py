@@ -16,9 +16,15 @@ with open(f'./ML_Hot_Model/lgbm_model.pickle', "rb") as f:
 # grap feature names from our model
 feature_names = model.booster_.feature_name()
 
+# @app.route("/")
+# def dashboard():
+#     """List all available api routes"""
+#     return render_template("dashboard.html")
+
 # Route to render index2.html template
 @app.route("/", methods=["GET", "POST"])
 def home():
+    """List all available api routes"""
     output_message = ""
     if request.method == "POST":
         sex = str(request.form["sex"])
@@ -58,9 +64,8 @@ def home():
             output_message = "Hot Hot..It's Getting Hot in Here ^_^"
         else:
             output_message = "Looks Like You Have a Good Personality :-("
-
+        
         print(data)
-
         # print(feature_names)
     return render_template("index2.html", message = output_message)
 
