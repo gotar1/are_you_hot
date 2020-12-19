@@ -39,16 +39,16 @@ feature_names = model.booster_.feature_name()
 # @app.route("/dashboard/")
 # def dashboard():
 #     return render_template("dashboard.html") 
-@app.route('/')
+# @app.route('/')
 
-def route():
-    """List all available routes"""
-    return (
-        f"Available Routes: <br/>"
-        f"/api/v1.0/hot<br/>"
+# def route():
+#     """List all available routes"""
+#     return (
+#         f"Available Routes: <br/>"
+#         f"/api/v1.0/hot<br/>"
         # f"/api/v1.0/monthly<br/>"
         # f"/api/v1.0/world<br/>"
-    )
+    # )
 # create a route..
 @app.route('/api/v1.0/hot')
 def hot():
