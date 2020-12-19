@@ -20,6 +20,15 @@ engine = create_engine("sqlite:///dataBase/Are_You_Hot.db")
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 
+################################################## 
+# Database Setup
+#################################################
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///Are_You_Hot.db"
+# Remove tracking modifications
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+Hot = create_classes(db)
+
 # upload saved model file
 with open(f'./ML_Hot_Model/lgbm_model.pickle', "rb") as f:
     model = pickle.load(f)
@@ -27,7 +36,7 @@ with open(f'./ML_Hot_Model/lgbm_model.pickle', "rb") as f:
 # grap feature names from our model
 feature_names = model.booster_.feature_name()
 
-@app.route("/")
+@app.route("/dashboard/")
 def dashboard():
     return render_template("dashboard.html") 
 @app.route('/')
