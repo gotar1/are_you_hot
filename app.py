@@ -106,7 +106,7 @@ def home():
         print(data)
 
         # print(feature_names)
-    return render_template("index2.html", message = output_message)
+    return render_template("index.html", message = output_message)
 
 if __name__ == "__main__":
     app.run(debug=True)
