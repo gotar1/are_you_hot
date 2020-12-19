@@ -1,7 +1,9 @@
-Flask
-xgboost
+flask
 gunicorn
 pandas
 numpy
 scikit-learn
 lightgbm
+sqlalchemy
+flask_cors
+
