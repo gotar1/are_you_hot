@@ -23,11 +23,11 @@ Base.prepare(engine, reflect=True)
 ################################################## 
 # Database Setup
 #################################################
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///Are_You_Hot.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///Are_You_Hot.db"
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
-Hot = create_classes(db)
+# db = SQLAlchemy(app)
+# Hot = create_classes(db)
 
 # upload saved model file
 with open(f'./ML_Hot_Model/lgbm_model.pickle', "rb") as f:
