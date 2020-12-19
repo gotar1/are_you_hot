@@ -107,6 +107,14 @@ def home():
 
         # print(feature_names)
     return render_template("index.html", message = output_message)
-
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html") 
+@app.route("/barchart")
+def barchart():
+    return render_template("barchart.html") 
+@app.route("/piechart")
+def piechart():
+    return render_template("piechart.html") 
 if __name__ == "__main__":
     app.run(debug=True)
