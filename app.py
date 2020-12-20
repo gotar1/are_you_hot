@@ -11,23 +11,19 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, inspect
 from flask_cors import CORS
 
-
 # Create an instance of Flask
 app = Flask(__name__)
 
-# create an engine and connection setup..reflect tables into sqlalchemy ORM ...
+# create an engine and connection setup..
 engine = create_engine("sqlite:///dataBase/Are_You_Hot.db")
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 
-################################################## 
 # Database Setup
-#################################################
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///Are_You_Hot.db"
+
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# db = SQLAlchemy(app)
-# Hot = create_classes(db)
 
 # upload saved model file
 with open(f'./ML_Hot_Model/lgbm_model.pickle', "rb") as f:
@@ -36,19 +32,6 @@ with open(f'./ML_Hot_Model/lgbm_model.pickle', "rb") as f:
 # grap feature names from our model
 feature_names = model.booster_.feature_name()
 
-# @app.route("/dashboard/")
-# def dashboard():
-#     return render_template("dashboard.html") 
-# @app.route('/')
-
-# def route():
-#     """List all available routes"""
-#     return (
-#         f"Available Routes: <br/>"
-#         f"/api/v1.0/hot<br/>"
-        # f"/api/v1.0/monthly<br/>"
-        # f"/api/v1.0/world<br/>"
-    # )
 # create a route..
 @app.route('/api/v1.0/hot')
 def hot():
@@ -108,14 +91,19 @@ def home():
 
         # print(feature_names)
     return render_template("index.html", message = output_message)
+
+# set up route for all html pages....
 @app.route("/dashboard")
 def dashboard():
     return render_template("dashboard.html") 
+
 @app.route("/barchart")
 def barchart():
     return render_template("barchart.html") 
+
 @app.route("/piechart")
 def piechart():
     return render_template("piechart.html") 
+    
 if __name__ == "__main__":
     app.run(debug=True)

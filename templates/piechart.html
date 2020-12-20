@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../static/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../static/css/style.css">
+  </head>
+  <body>
     <div class="dropdown">
-        <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">Results
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><a href="index.html">Homepage</a></li>
-          <li><a href="dashboard.html">Dashboard</a></li>
-          <li><a href="barchart.html">Bar Chart</a></li>
-        </ul>
-      </div>    
+      <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">Results
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="barchart.html">Bar Chart</a></li>
+      </ul>
+    </div>
+    
+    <div class="container">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script src="../static/bar.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-</body>
+      <div class="row">
+        <div class="col-md-4">
+          <div id="eyepie"></div>
+        </div>
+        <div class="col-md-4">
+          <div id="distpie"></div>
+        </div>
+        <div class="col-md-4">
+          <div id="agepie"></div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-4">
+          <div id="sexpie"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="ratiopie"></div>
+        </div> 
+      </div>
+  
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/pie.js"></script>
+  </body>
+
 </html>

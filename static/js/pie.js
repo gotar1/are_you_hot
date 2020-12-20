@@ -1,78 +1,90 @@
-// Create an array of each country's numbers
-let url = 'api/v1.0/hot'
-d3.json(url).then(function(data){
-  console.log(data);
-  
-  let distinctiveFeatures = [];
-  data.forEach(item => distinctiveFeatures.push(item.distinctive_features));
-  console.log(distinctiveFeatures);
+// base url
+let url = "/api/v1.0/hot"
+
+// /create d3 api querry and build pie charts...
+d3.json(url).then((data) =>{
+
+  let dataCopy = data;
+  console.log(dataCopy);
 
   let sex = [];
-  data.forEach(item => sex.push(item.sex));
+  dataCopy.forEach(item => sex.push(item.sex));
   console.log(sex);
 
-  // let eyeColor = [];
-  // data.forEach(item => eyeColor.push(item.eye_color));
-  // console.log(eyeColor);
-  function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-  }
-  let distinctive = data.distinctive_features;
-  let disCount = distinctive.filter(onlyUnique)
-  let disLength = distinctive.length
-  // let distinctCounts = distinctive.c
-  // console.log(distinctCounts)
-  console.log(disCount)
-  console.log(disLength)
-});
+  let eyeColor = [];
+  dataCopy.forEach(item => eyeColor.push(item.eye_color));
+  console.log(eyeColor);
 
+  let distinctiveFeatures= [];
+  dataCopy.forEach(item => distinctiveFeatures.push(item.distinctive_features));
+  console.log(distinctiveFeatures);
 
-// let distinct = Object.values(data.distinct);
-// let sex = Object.values(data.sex);
-// Create an array of music provider labels
-// let labels = Object.keys(data.distinct);
+  let ratio = [];
+  dataCopy.forEach(item => ratio.push(item['ratio(wt/ht)']));
+  console.log(ratio);
 
-// Display the default plot
-function init() {
-  let data = [{
-    // values: distinct,
-    // labels: labels,
-    type: "pie"
+  let age = [];
+  dataCopy.forEach(item => age.push(item.age));
+  console.log(age);
+
+  let hotTest = [];
+  dataCopy.forEach(item => hotTest.push(item.hot_test));
+  console.log(hotTest);
+
+  // build age pie chart
+  let ageData = [{
+    values: hotTest,
+    labels: hotTest,
+    text: age,
+    type: 'pie'
   }];
 
-  let layout = {
-    height: 600,
-    width: 800
-  };
+  Plotly.newPlot('agepie', ageData);
 
-  Plotly.newPlot("pie", data, layout);
-}
+  // build ratio pie chart
+  let ratioData = [{
+    values: hotTest,
+    labels: hotTest,
+    text: ratio,
+    type: 'ratiopie'
+  }];
 
-// On change to the DOM, call getData()
-d3.selectAll("#selDataset").on("change", getData);
+  Plotly.newPlot('ratiopie', ratioData);
 
-// Function called by DOM changes
-function getData() {
-  let dropdownMenu = d3.select("#selDataset");
-  // Assign the value of the dropdown menu option to a variable
-  let dataset = dropdownMenu.property("value");
-  // Initialize an empty array for the country's data
-  let data = [];
+  // build sex pie chart
+  let sexData = [{
+    values: hotTest,
+    labels: hotTest,
+    text: sex,
+    type: 'pie'
+  }];
+  
+  Plotly.newPlot('sexpie', sexData);
 
-  // if (dataset == 'distinct') {
-  //     data = distinct;
-  // }
-  // else if (dataset == 'sex') {
-  //     data = sex;
+  // build hair color pie chart
+  let hairData = [{
+    values: hotTest,
+    labels: hotTest,
+    text: distinctiveFeatures,
+    type: 'pie'
+  }];
 
-}
-  // Call function to update the chart
-//   updatePlotly(data);
-// }
+  Plotly.newPlot('distpie', hairData);
 
-// Update the restyled plot's values
-function updatePlotly(newdata) {
-  Plotly.restyle("pie", "values", [newdata]);
-}
+  // build eye color pie chart
+  let eyeData = [{
+    values: hotTest,
+    labels: hotTest,
+    text: eyeColor,
+    type: 'pie'
+  }];
 
-init();
+  Plotly.newPlot('distpie', eyeData);
+  
+});
+  
+  
+  
+  
+
+  
