@@ -9,11 +9,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
   <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
   <div class="dropdown">
-    <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">Results
+    <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">Navigation
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li><a href="index">Homepage</a></li>
@@ -25,9 +26,9 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center">
+      <div class="jumbotron text-center">
   <h1>Hot or Not</h1>
-  <p>Dashboard</p>
+  <p1>Dashboard</p1>
       </div>
     </div>
     
@@ -36,10 +37,15 @@
       <option value="EyeColor">EyeColor</option>
       <option value="HairColor">HairColor</option>
     </select> -->
-    <!-- <script src="bar.js"></script> -->
-    <!-- <body> -->
-      <div class="row">
+    <!-- <script src="bar.js"></script> --
+    <!-- <body> --
+      <!-- <div class="row">
         <div class="col-md-12">
+            <table class="table table-striped"> -->
+
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <!-- <p>Use table below to convert inches to feets for height<br>Example: if your height is 5ft 3in. then input 5.25<br>NOTE: Fields are NOT case sensitive...</p> -->
             <table class="table table-striped">
                 <thead>
                     <tr><th>Categories</th><th>Hot</th><th>Not Hot</th></tr>
@@ -58,9 +64,9 @@
           <option value="distinct">Distinctive Feature</option>
           <option value="sex">Sex</option>       
       </select>
-      <div id="pie"></div> -->
+      <div id="pie"></div> --
       <!-- <script src="data.js"></script>
-      <script src="plots.js"></script> -->
+      <script src="plots.js"></script> --
   <!-- </body> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>

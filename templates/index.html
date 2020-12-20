@@ -11,13 +11,14 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/index2_style.css') }}">
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/index2_style.css') }}"> -->
+        <link rel="stylesheet" href="../static/css/index2_style.css">
         
     </head>
     <body>
-        <div><button type="button" class="btn btn-outline-secondary"><a href="dashboard" class="card-link">Dashboard</a></button></p></div>
+        <!-- <div><button type="button" class="btn btn-outline-secondary"><a href="dashboard" class="card-link">Dashboard</a></button></p></div> -->
         <div class="dropdown-hover left">
-            <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">Visuals
+            <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">Navigation
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li><a href="dashboard">Dashboard</a></li>
@@ -27,13 +28,13 @@
         </div>
         <div class="container">
             <div class="jumbotron" style="text-align: center">
-                <h1>Hot or Not</h1>
-                <p>Enter Your Details Below!</p>
-                <p><strong>Fields are NOT case sensitive..</strong></p>
+                <h1>Are You Hot?</h1>
+                <p1>Enter Your Features Below!</p1>
+                <!-- <p><strong>Fields are NOT case sensitive..</strong></p> -->
             </div>
             <div class="row">
                 <div class="col-md-offset-2 col-md-4">
-                    <p>Use table below to convert inches to feets for height<br>Example: if your height is 5ft 3in. then input 5.25</p>
+                    <p>Use table below to convert inches to feets for height<br>Example: if your height is 5ft 3in. then input 5.25<br>NOTE: Fields are NOT case sensitive...</p>
                     <table class="table table-striped">
                         <tbody>
                             <tr>

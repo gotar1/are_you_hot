@@ -100,6 +100,7 @@ def home():
         result = model.predict(data[feature_names])
         if result == 0:
             output_message = "Hot Hot..It's Getting Hot in Here ^_^"
+            
         else:
             output_message = "Looks Like You Have a Good Personality :-("
 

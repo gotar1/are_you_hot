@@ -1,54 +1,74 @@
-html,
-/* body {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-} */
+/* /////////////////0000000///////////////// */
+
+/* Drop down + Menu drop down + Button Color */
+
+/* /////////////////0000000///////////////// */
 
 .dropdown-hover {
+  margin-top: 10px;
+  margin-left: 15px;
+  float: left;
   font-size: 20px;
-	margin-top: 20px;
-  margin-bottom: 10px;
-  /* margin-left: 10px; */
-  /* padding-right: 15px;
-  padding-left: 15px; */
-	/* text-align: center; */
-	padding: -80px;
+	text-align: left;
 }
 
+.dropdown-menu {
+/* width:10px;   This can make it wider but not thinner */
+float: left; /* Giam */
+top: 43px; /* Giam */
+}
+
+.btn {
+background-color: rgb(211, 211, 211);  /* Giam */
+}
+
+/* /////////////////0000000///////////////// */
+
+.container {
+  margin-left: 60px;
+  margin-right: 60px;
+}
 .jumbotron {
-  font-size: 20px;
-	margin-top: 0px;
+  background-image: url(https://thumbs.gfycat.com/AthleticSimpleHuemul.webp);     
+  /* background-image: url(https://i.gifer.com/SkoL.gif); */
+  background-size: cover; 
+  color: white; /* Giam */
+	margin-top: 10px;
   margin-bottom: 10px;
-  /* padding-right: 15px;
-  padding-left: 15px; */
-	text-align: center;
-	padding: -80px;
+  margin-left: 60px;
+  margin-right: 60px;  	
+  padding: -10px;
+  background-color: lightgray; 
 
 }
 
 .form-group {
-
   text-align: left;
 }
 
 .table-striped, th, td {
-  border: 1px solid black;
+  border: 2px solid black;
   border-collapse: collapse;
   text-align: center;
 }
 
-p {
-  font-size: 14px;
+p1 {
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
 	/* padding: 20px; */
 } 
 
+p {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+	/* padding: 20px; */
+} 
+
 h1 {
-	font-size: 20px;
-	margin-top: 0px;
+  font-size: 20px;
+  margin-top: 0px;
 	margin-bottom: 10px;
-	text-align: center;
-	/* padding: -50px; */
+	text-align: center;	
 }
