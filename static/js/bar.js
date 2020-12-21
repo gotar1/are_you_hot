@@ -32,13 +32,12 @@ d3.json(url).then((data) =>{
   
   // build bar chart for Eye Color..
   let trace1 = {
-    y: eyeColor,
-    x: hotTest,
-    orientation: 'h',
+    x: eyeColor.reverse(),
+    y: hotTest.reverse(),
     type: 'bar',
-    text: eyeColor.length
-  }
-  
+    text: sex.reverse()
+  };
+
   let dataTrace1 = [trace1];
 
   let barLayout1 = {
@@ -55,13 +54,12 @@ d3.json(url).then((data) =>{
 
   // build bar chart for Sex..
   let trace2 = {
-    y: hotTest,
-    x: sex,
-    // orientation: 'h',
+    x:sex.reverse(),
+    y: hotTest.reverse(),
     type: 'bar',
-    text: hotTest
+    text: sex
   };
-  
+
   let dataTrace2 = [trace2];
 
   let barLayout2 = {
@@ -71,20 +69,19 @@ d3.json(url).then((data) =>{
       r: 100,
       t: 100,
       b: 100
-    }
+    },
   };
 
   Plotly.newPlot('sexbar', dataTrace2, barLayout2); 
 
   // build bar chart for Distinctive Feature..
   let trace3 = {
-    y: hotTest,
-    x: distinctiveFeatures,
-    // orientation: 'h',
+    x: distinctiveFeatures.reverse(),
+    y: hotTest.reverse(),
     type: 'bar',
-    text: hotTest
+    text: sex.reverse()
   };
-  
+
   let dataTrace3 = [trace3];
 
   let barLayout3 = {
@@ -101,13 +98,12 @@ d3.json(url).then((data) =>{
 
   // build bar chart for Weight/Height Ratio.. 
   let trace4 = {
-    y: hotTest,
-    x: ratio,
-    // orientation: 'h',
+    x: ratio.reverse(),
+    y: hotTest.reverse(),
     type: 'bar',
-    text: hotTest
+    text: sex.reverse()
   };
-  
+
   let dataTrace4 = [trace4];
 
   let barLayout4 = {
@@ -124,13 +120,12 @@ d3.json(url).then((data) =>{
 
   // build bar for Age..
   let trace5 = {
-    y: hotTest,
-    x: age,
-    // orientation: 'h',
+    x: age.reverse(),
+    y: hotTest.reverse(),
     type: 'bar',
-    text: hotTest
+    text: sex.reverse()
   };
-  
+
   let dataTrace5 = [trace5];
 
   let barLayout5 = {
@@ -143,6 +138,6 @@ d3.json(url).then((data) =>{
     }
   };
 
-  Plotly.newPlot('agebar', dataTrace5, barLayout5); 
+  Plotly.newPlot('agebar', dataTrace5, barLayout5);  
 
 });

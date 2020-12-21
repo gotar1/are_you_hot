@@ -32,6 +32,10 @@ with open(f'./ML_Hot_Model/lgbm_model.pickle', "rb") as f:
 # grap feature names from our model
 feature_names = model.booster_.feature_name()
 
+@app.route("/")
+def dashboard():
+    return render_template("index.html")
+
 # create a route..
 @app.route('/api/v1.0/hot')
 def hot():
@@ -43,7 +47,7 @@ def hot():
     return df.to_json(orient="records")
 
 # Route to render index2.html template
-@app.route("/", methods=["GET", "POST"])
+@app.route("/hot_test", methods=["GET", "POST"])
 def home():
     """List all available api routes"""
     output_message = ""
@@ -90,12 +94,12 @@ def home():
         print(data)
 
         # print(feature_names)
-    return render_template("index.html", message = output_message)
+    return render_template("hot_test.html", message = output_message)
 
 # set up route for all html pages....
-@app.route("/dashboard")
-def dashboard():
-    return render_template("dashboard.html") 
+# @app.route("/dashboard")
+# def dashboard():
+#     return render_template("dashboard.html") 
 
 @app.route("/barchart")
 def barchart():

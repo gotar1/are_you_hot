@@ -34,9 +34,13 @@ d3.json(url).then((data) =>{
   // build age pie chart
   let ageData = [{
     values: hotTest,
-    labels: hotTest,
-    text: age,
-    type: 'pie'
+    labels: age,
+    text: hotTest,
+    type: 'pie',
+    title: {
+      display: true,
+      text: 'Age'
+    }
   }];
 
   Plotly.newPlot('agepie', ageData);
@@ -44,29 +48,41 @@ d3.json(url).then((data) =>{
   // build ratio pie chart
   let ratioData = [{
     values: hotTest,
-    labels: hotTest,
-    text: ratio,
-    type: 'ratiopie'
+    labels: ratio,
+    text: hotTest,
+    type: 'pie',
+    title: {
+      display: true,
+      text: 'Weight/HeightRatio'
+    }
   }];
 
   Plotly.newPlot('ratiopie', ratioData);
 
   // build sex pie chart
   let sexData = [{
-    values: hotTest,
-    labels: hotTest,
-    text: sex,
-    type: 'pie'
+    values: hotTest.reverse(),
+    labels: sex.reverse(),
+    text: hotTest,
+    type: 'pie',
+    title: {
+      display: true,
+      text: 'Sex'
+    }
   }];
   
   Plotly.newPlot('sexpie', sexData);
 
-  // build hair color pie chart
+  // build distinctive features pie chart
   let hairData = [{
     values: hotTest,
-    labels: hotTest,
-    text: distinctiveFeatures,
-    type: 'pie'
+    labels: distinctiveFeatures,
+    text: hotTest,
+    type: 'pie',
+    title: {
+      display: true,
+      text: 'Distinctive Features'
+    }
   }];
 
   Plotly.newPlot('distpie', hairData);
@@ -74,12 +90,16 @@ d3.json(url).then((data) =>{
   // build eye color pie chart
   let eyeData = [{
     values: hotTest,
-    labels: hotTest,
-    text: eyeColor,
-    type: 'pie'
+    labels: eyeColor,
+    text: hotTest,
+    type: 'pie',
+    title: {
+      display: true,
+      text: 'Eye Color'
+    }
   }];
 
-  Plotly.newPlot('distpie', eyeData);
+  Plotly.newPlot('eyepie', eyeData);
   
 });
   
