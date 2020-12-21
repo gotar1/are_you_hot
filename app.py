@@ -43,7 +43,7 @@ def hot():
     return df.to_json(orient="records")
 
 # Route to render index2.html template
-@app.route("/index", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def home():
     """List all available api routes"""
     output_message = ""
