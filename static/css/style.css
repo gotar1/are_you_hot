@@ -19,7 +19,14 @@ top: 43px; /* Giam */
 }
 
 .btn {
-background-color: rgb(211, 211, 211);  /* Giam */
+background-color: rgb(211, 211, 211);
+color: black;
+border-color: black;
+font-size: 12px; 
+text-align: center;
+vertical-align: middle;
+height: 20px;
+line-height: 1px;
 }
 
 /* /////////////////0000000///////////////// */
@@ -72,10 +79,10 @@ h1 {
 	margin-bottom: 10px;
 	text-align: center;	
 }
-/* 
+
 h2 {
-  font-size: 20px;
+  font-size: 30px;
   margin-top: 0px;
 	margin-bottom: 10px;
 	text-align: center;	
-} */
+} 
