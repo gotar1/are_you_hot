@@ -46,8 +46,8 @@ def hot():
     session.close()
     return df.to_json(orient="records")
 
-# Route to render index2.html template
-@app.route("/hot_test", methods=["GET", "POST"])
+# Route to render hottest.html template
+@app.route("/hottest", methods=["GET", "POST"])
 def home():
     """List all available api routes"""
     output_message = ""
@@ -94,12 +94,7 @@ def home():
         print(data)
 
         # print(feature_names)
-    return render_template("hot_test.html", message = output_message)
-
-# set up route for all html pages....
-# @app.route("/dashboard")
-# def dashboard():
-#     return render_template("dashboard.html") 
+    return render_template("hottest.html", message = output_message)
 
 @app.route("/barchart")
 def barchart():
