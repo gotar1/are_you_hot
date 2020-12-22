@@ -86,11 +86,11 @@ def home():
         # make our prediction using our model and print corresponding message. 
         result = model.predict(data[feature_names])
         if result == 0:
-            output_message = "Hot Hot..It's Getting Hot in Here ^_^"
+            output_message = "Hot Hot..It's Getting Hot in Here"              
             
         else:
-            output_message = "Looks Like You Have a Good Personality :-("
-
+            output_message = "Looks Like You Have a Good Personality"
+           
         print(data)
 
         # print(feature_names)
