@@ -2,7 +2,7 @@
 -------------
 Are you hot? Take the [TEST](https://are-you-hot.herokuapp.com/)
 
-![home](/Images/hot_test)
+![home](/Images/hot_test.png)
 
 ## Project Topic:
 
@@ -29,8 +29,8 @@ and "Ugly Celebrities" [here](https://www.imdb.com/list/ls064405717/) lists.
 This section contains screenshots of each page that we built.
 #### <a id="bar-chart"></a>Bar Charts
 
-![bar](/Images/bar_chart)
+![bar](/Images/bar_chart.png)
 
 #### <a id="pie-chart"></a>Pie Chart
 
-![pie](/Images/pie_chart)
+![pie](/Images/pie_chart.png)
