@@ -1,4 +1,5 @@
 # Are You Hot
+Machine Learning Model to Predict if a Person Looks Hot or Not based on thier body statistics.
 -------------
 Are you hot? Take the [TEST](https://are-you-hot.herokuapp.com/)
 
